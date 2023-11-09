@@ -16,7 +16,7 @@ Během testování vaší práce bude váš repozitář stažen a databáze bude
 
 Vyplňte šablonu odevzdání v README.md. Chcete-li k popisu dat využít diagramy, můžete využít nástroj Mermaid nebo doplnit text obrázky. Nezapomeňte doplnit odkazy na zdroje vašich dat.
 
-Data vložte do adresáře data. Výsledné vizualizace vložte do adresáře results.
+Data vložte do adresáře data. Výsledné vizualizace vložte do adresáře results, vizualizace popište (nezapomeňte popsat osy).
 
 Během testování vaší práce bude váš repozitář stažen a prostředí Elastic bude vyvoláno pomocí vámi dodaného návodu (viz šablona) a souboru `docker-compose.yml`.
 

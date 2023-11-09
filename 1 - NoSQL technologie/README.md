@@ -19,5 +19,3 @@
 ## Popis vlastního datasetu
 
 ## Závěr
-
-## Návod ke zprovoznění semestrální práce

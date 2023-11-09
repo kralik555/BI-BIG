@@ -2,6 +2,8 @@
 
 ## Nahraďte stručným názvem zvoleného datasetu
 
+(obsah viz 2. část, podčást A)
+
 ### Popis datasetu
 
 ### Zdroje
@@ -10,12 +12,4 @@
 
 ### Provedené úpravy dat
 
-## Vizualizace
-
-### Postup/popis 1. vizualizace
-
-### ...
-
 ## Závěr
-
-## Návod ke zprovoznění semestrální práce
