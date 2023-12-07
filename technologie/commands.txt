@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Start the MongoDB cluster using docker-compose
+echo "Starting MongoDB cluster..."
+docker compose up -d --remove-orphans
+
+# Sleep for a few seconds to ensure that MongoDB containers are up
+sleep 5
+
+# Initialize the Config Server Replica Set
+echo "Initializing Config Server Replica Set..."
+docker exec -it technologie-config01-1 mongosh --port 27019 --eval 'rs.initiate({_id: "configReplSet", configsvr: true, members: [{ _id : 0, host : "technologie-config01-1:27019" },{ _id : 1, host : "technologie-config02-1:27019" },{ _id : 2, host : "technologie-config03-1:27019" }]})'
+
+# Sleep to give time for the replica set to elect a primary
+sleep 10
+# Initialize Shard Replica Sets
+echo "Initializing Shard 1 Replica Set..."
+docker exec -it technologie-shard01a-1 mongosh --port 27018 --eval 'rs.initiate({_id: "shard01", members: [{ _id : 0, host : "technologie-shard01a-1:27018" },{ _id : 1, host : "technologie-shard01b-1:27018" },{ _id : 2, host : "technologie-shard01c-1:27018" }]})'
+
+echo "Initializing Shard 2 Replica Set..."
+docker exec -it technologie-shard02a-1 mongosh --port 27018 --eval 'rs.initiate({_id: "shard02", members: [{ _id : 0, host : "technologie-shard02a-1:27018" },{ _id : 1, host : "technologie-shard02b-1:27018" },{ _id : 2, host : "technologie-shard02c-1:27018" }]})'
+
+# Sleep to give time for the shards to elect a primary
+sleep 10
+
+# Connect to the first mongos and add shards
+echo "Adding shards to the cluster..."
+docker exec -it technologie-mongos01-1 mongosh --eval 'sh.addShard("shard01/technologie-shard01a-1:27018"); sh.addShard("shard02/technologie-shard02a-1:27018")'
+
+# Sleep to ensure shards are added
+sleep 5
+
+# Enable sharding for your database and collection
+# Replace 'your_database' and 'your_collection' with your actual database and collection names
+# Replace 'your_shard_key' with your actual shard key field
+echo "Enabling sharding on the database and collection..."
+docker exec -it technologie-mongos01-1 mongosh --port 27017 --eval 'sh.enableSharding("cms"); sh.shardCollection("cms.content", {"_id": "hashed"})'
+
+

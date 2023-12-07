@@ -1,0 +1,101 @@
+1) Najdi všechny články vydané po 1. 7. 2023.
+db.content.find({
+    "type": "Article",
+    "publish_date": { "$gt": "2023-07-01" }
+});
+
+2) Najdi počty různých typů kontentu.
+db.content.aggregate([
+    { "$group": { "_id": "$type", "count": { "$sum": 1 } } }
+]);
+
+3) Najdi kontent s "technology" v názvu.
+db.content.find({
+    "title": { "$regex": "technology", "$options": "i" }
+});
+
+4) Najdi 5 nejnovějších blogů.
+db.content.find({
+    "type": "Blog"
+}).sort({ "publish_date": -1 }).limit(5);
+
+5) Najdi všechna vide od autora "John Doe".
+db.content.find({
+    "type": "Video",
+    "author": "John Doe"
+});
+
+6) Přidej nový záznam typu blog.
+db.content.insertOne({
+    "title": "Innovations in Green Energy",
+    "type": "Blog",
+    "author": "Alexa Green",
+    "publish_date": "2023-12-05",
+    "content": "Exploring the latest trends and breakthroughs in green energy and sustainable technologies."
+});
+
+7) Změň jeden záznam s daným názvem.
+db.content.updateOne(
+    { "title": "The History of Jazz Music" }, // Replace with the actual title you're searching for
+    { "$set": { "title": "Updated Title for the Document" } }
+);
+
+8) Odstraň všechny záznamy od autora Johna Doe.
+db.yourCollectionName.deleteMany({
+    "author": "John Doe"
+});
+
+9) Najdi všechny články od Alice Johnson a Davida Garcii.
+db.yourCollectionName.find({
+    "type": "Article",
+    "author": { "$in": ["Alice Johnson", "David Garcia"] }
+});
+
+10) Najdi všechna videa z roku 2023 pomocí regex.
+db.yourCollectionName.find({
+    "type": { "$in": ["Image", "Video"] },
+    "publish_date": { "$regex": "^2023" }
+});
+
+11) Najdi články, rozděl je do skupin podle autora a spočítej počet článků sestupně.
+db.yourCollectionName.aggregate([
+    { $match: { type: "Article" } },
+    { $group: { _id: "$author", numberOfArticles: { $sum: 1 } } },
+    { $sort: { numberOfArticles: -1 } }
+]);
+
+12) Najdi kontent, v jehože textu se vyskytuje slovo technology.
+db.yourCollectionName.find({ $text: { $search: "technology" } });
+
+13) Změň všechny dokumenty tak, aby měly nový atribut views.
+db.yourCollectionName.updateMany(
+    {},
+    { $set: { views: 0 } }
+);
+
+14) Najdi kontent, který je v určitém časovém období.
+db.yourCollectionName.find({
+    publish_date: {
+        $gte: "2023-01-01",
+        $lte: "2023-06-30"
+    }
+});
+
+15) Zvedni počet shlédnutí pro všechny blogy.
+db.yourCollectionName.updateMany(
+    { type: "Blog" },
+    { $inc: { views: 10 } }
+);
+
+Vysvětlení příkazů:
+find: hledá dokumenty v kolekci podle dalších parametrů, vrací všechny nalezené dokumenty.
+updateOne, updateMany: updatuje jeden, respektive více dokumentů podle poskytnutých kritérií. updateOne updatene první nalezený dokument pokud by našel více podle kritérií.
+$set: nastaví pole dokumentu na určitou hodnotu.
+$text: hledá v polích dokumentů, které jsou označeny jako text.
+$search: hledá shodu daného substringu v určitém poli.
+aggreagate: seskupuje hodnoty z několika dokumentů dohromady a vrací jeden výsledek.
+$sort: seřadí nalezené dokumenty podle určitého pole.
+$limit: limituje počet vracených dokumentů.
+$in: hledá hodnotu pole v seznamu možností.
+$regex: umožňuje vyhledávat pomocí regulárních výrazů.
+$inc: zvýší hodnotu pole o určitý počet.

@@ -1,0 +1,136 @@
+version: '3.1'
+
+services:
+  # Config Servers
+  config01:
+    image: mongo
+    command: mongod --configsvr --replSet configReplSet --port 27019
+    volumes:
+      - ./data/config01:/data/db
+    networks:
+      - mongo-cluster
+    expose:
+      - "27019"
+
+  config02:
+    image: mongo
+    command: mongod --configsvr --replSet configReplSet --port 27019
+    volumes:
+      - ./data/config02:/data/db
+    networks:
+      - mongo-cluster
+    expose:
+      - "27019"
+
+  config03:
+    image: mongo
+    command: mongod --configsvr --replSet configReplSet --port 27019
+    volumes:
+      - ./data/config03:/data/db
+    networks:
+      - mongo-cluster
+    expose:
+      - "27019"
+
+  # Mongos Routers
+  mongos01:
+    image: mongo
+    depends_on:
+      - config01
+      - config02
+      - config03
+    command: mongos --configdb configReplSet/config01:27019,config02:27019,config03:27019 --bind_ip_all
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo-cluster
+    expose:
+      - "27017:27017"
+
+  mongos02:
+    image: mongo
+    depends_on:
+      - config01
+      - config02
+      - config03
+    command: mongos --configdb configReplSet/config01:27019,config02:27019,config03:27019 --bind_ip_all
+    ports:
+      - "27018:27017"
+    networks:
+      - mongo-cluster
+
+  # Shard 1 Servers
+  shard01a:
+    image: mongo
+    command: mongod --shardsvr --replSet shard01 --dbpath /data/db --port 27018
+    volumes:
+      - ./data/shard01a:/data/db
+    networks:
+      - mongo-cluster
+
+  shard01b:
+    image: mongo
+    command: mongod --shardsvr --replSet shard01 --dbpath /data/db --port 27018
+    volumes:
+      - ./data/shard01b:/data/db
+    networks:
+      - mongo-cluster
+
+  shard01c:
+    image: mongo
+    command: mongod --shardsvr --replSet shard01 --dbpath /data/db --port 27018
+    volumes:
+      - ./data/shard01c:/data/db
+    networks:
+      - mongo-cluster
+
+  # Shard 2 Servers
+  shard02a:
+    image: mongo
+    command: mongod --shardsvr --replSet shard02 --dbpath /data/db --port 27018
+    volumes:
+      - ./data/shard02a:/data/db
+    networks:
+      - mongo-cluster
+
+  shard02b:
+    image: mongo
+    command: mongod --shardsvr --replSet shard02 --dbpath /data/db --port 27018
+    volumes:
+      - ./data/shard02b:/data/db
+    networks:
+      - mongo-cluster
+
+  shard02c:
+    image: mongo
+    command: mongod --shardsvr --replSet shard02 --dbpath /data/db --port 27018
+    volumes:
+      - ./data/shard02c:/data/db
+    networks:
+      - mongo-cluster
+
+# Custom network to enable communication between containers
+networks:
+  mongo-cluster:
+    driver: bridge
+
+# Persistent storage to maintain data
+volumes:
+  config01:
+    driver: local
+  config02:
+    driver: local
+  config03:
+    driver: local
+  shard01a:
+    driver: local
+  shard01b:
+    driver: local
+  shard01c:
+    driver: local
+  shard02a:
+    driver: local
+  shard02b:
+    driver: local
+  shard02c:
+    driver: local
