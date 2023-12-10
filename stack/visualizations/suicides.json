@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "7c3d5da0-9748-11ee-aef8-e9fe64432be4",
+    "_type": "visualization",
+    "_source": {
+      "title": "Suicides per 100k",
+      "visState": "{\"title\":\"Suicides per 100k\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"suicides_per_100k\",\"interval\":1,\"extended_bounds\":{},\"customLabel\":\"Suicides per 100k people\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"aff33e50-973c-11ee-aef8-e9fe64432be4\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  }
+]

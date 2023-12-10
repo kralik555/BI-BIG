@@ -1,1 +1,0 @@
-# Návod ke zprovoznění semestrální práce

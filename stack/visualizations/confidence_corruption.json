@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "23d985a0-9750-11ee-aef8-e9fe64432be4",
+    "_type": "visualization",
+    "_source": {
+      "title": "Corruption perception correlation with Confidence in Government",
+      "visState": "{\"title\":\"Corruption perception correlation with Confidence in Government\",\"type\":\"heatmap\",\"params\":{\"type\":\"heatmap\",\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":4,\"colorSchema\":\"Blues\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":false,\"rotate\":0,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"Confidence In National Government\",\"interval\":0.1,\"min_doc_count\":false,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"range\",\"schema\":\"group\",\"params\":{\"field\":\"Perceptions Of Corruption\",\"ranges\":[{\"from\":0,\"to\":0.1},{\"from\":0.1,\"to\":0.2},{\"from\":0.2,\"to\":0.3},{\"from\":0.3,\"to\":0.4},{\"from\":0.4,\"to\":0.5},{\"from\":0.5,\"to\":0.6},{\"from\":0.6,\"to\":0.7},{\"from\":0.7,\"to\":0.8},{\"from\":0.8,\"to\":0.9},{\"from\":0.9,\"to\":1}]}}]}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 65\":\"rgb(247,251,255)\",\"65 - 130\":\"rgb(198,219,239)\",\"130 - 195\":\"rgb(107,174,214)\",\"195 - 260\":\"rgb(33,113,181)\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"aff33e50-973c-11ee-aef8-e9fe64432be4\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  }
+]

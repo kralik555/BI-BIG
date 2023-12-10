@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "68fbfd60-9765-11ee-aef8-e9fe64432be4",
+    "_type": "dashboard",
+    "_source": {
+      "title": "vizosky",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":6,\"h\":3,\"i\":\"1\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"23d985a0-9750-11ee-aef8-e9fe64432be4\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":6,\"y\":0,\"w\":6,\"h\":3,\"i\":\"2\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"505c0a00-9749-11ee-aef8-e9fe64432be4\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":3,\"w\":6,\"h\":3,\"i\":\"3\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"2dd60fe0-9752-11ee-aef8-e9fe64432be4\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":6,\"y\":3,\"w\":6,\"h\":3,\"i\":\"4\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"ce087fc0-9752-11ee-aef8-e9fe64432be4\"},{\"panelIndex\":\"5\",\"gridData\":{\"x\":0,\"y\":6,\"w\":6,\"h\":3,\"i\":\"5\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"36fa8140-9762-11ee-aef8-e9fe64432be4\"},{\"panelIndex\":\"6\",\"gridData\":{\"x\":6,\"y\":6,\"w\":6,\"h\":3,\"i\":\"6\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"7c3d5da0-9748-11ee-aef8-e9fe64432be4\"},{\"panelIndex\":\"7\",\"gridData\":{\"x\":0,\"y\":9,\"w\":6,\"h\":3,\"i\":\"7\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"6bc49110-9756-11ee-aef8-e9fe64432be4\"},{\"gridData\":{\"w\":6,\"h\":3,\"x\":6,\"y\":9,\"i\":\"8\"},\"version\":\"6.2.4\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"id\":\"4311caa0-9763-11ee-aef8-e9fe64432be4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "ce087fc0-9752-11ee-aef8-e9fe64432be4",
+    "_type": "visualization",
+    "_source": {
+      "title": "Populations",
+      "visState": "{\"title\":\"Populations\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"range\",\"schema\":\"bucket\",\"params\":{\"field\":\"population\",\"ranges\":[{\"from\":0,\"to\":1000000},{\"from\":1000000,\"to\":10000000},{\"from\":10000000,\"to\":100000000},{\"from\":100000000,\"to\":1000000000},{\"from\":1000000000}]}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"aff33e50-973c-11ee-aef8-e9fe64432be4\",\"filter\":[{\"meta\":{\"index\":\"aff33e50-973c-11ee-aef8-e9fe64432be4\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"sex\",\"value\":\"both\",\"params\":{\"query\":\"both\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"sex\":{\"query\":\"both\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  }
+]

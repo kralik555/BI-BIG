@@ -1,6 +1,4 @@
 # Vizualizace dat - prezentace výsledků
-vložit i obrázky i popisy jejich, uvádět jednotky u os
-(obsah viz 2. část, podčást B)
 
 ## Vizualizace 1
 
@@ -8,18 +6,29 @@ Tento koláčový graf zobrazuje rozložení sebevražd na 100 000 obyvatel. V t
 
 ## Vizualizace 2
 
-Druhá visualizace je histogram, který ukazuje, jak velká míra svobody je v zemích. Histogram je rozdělen do sloupců po 5 hodnotách. Z grafu je vidět, že největší koncentrace zemí je v oblasti s hodnotou svobody alespoň 80. Hodnotoy 100 bylo dosaženo pouze 10 krát, což však můžou být ty stejné země v několika letech. Naopak velmi nízkých hodnot bylo dosaženo málokrát (pouze 15 zemí pod hodnocení 50).
+Druhá vizualizace zobrazuje počty sebevražd na 100 000 obyvatel, přičemž jednotlivé sloupce jsou ještě rozděleny podle celkového štěstí v dané zemi. Jak je vidět, čím šťastnější je obyvatelstvo, tím menší je počet sebevražd.
 
 ## Vizualizace 3
 
+Třetí vizualizace zobrazuje počet záznamů s danými úrovněmi štěstí. Z grafu je vidět, že nejvíce států je hodnoceno 5 na škále štěstí od 0 do 7. Štěstí na nižší úrovni než 3 nemá téměř žádný stát.
+
 ## Vizualizace 4
+
+Čtvrtý graf zobrazuje počty sebevražd na 100 000 obyvatel, přičemž každý sloupec hodnot je rozdělen podle celkové svobody v zemích. Jak je vidět, čím vyšší je svoboda, tím více je sebevražd, což je celkem překvapení.
 
 ## Vizualizace 5
 
+Další vizualizací je heatmapa. Tato heatmapa zobrazuje korelaci mezi důvěrou ve vládu a vnímání její korupce. Z heatmapy to vypadá, že by zde korelace být mohla, jelikož u záznamů, kde je vysoká vnímaná korupce, je i nízká důvěra.
+
 ## Vizualizace 6
+
+Na této vizualizace je vidět počet zemí s určitými úrovněmi politických práv. V této vizualizace jsme se omezili pouze na záznamy celých zemí. Vidíme, že většina zemí má u politických práv hodnotu 1, což znamená, že mají dobrá politická práva a jsou to pravděpodobně velmi svobodné země.
 
 ## Vizualizace 7
 
+Další vizualizací je tabulka dat o populacích. Opět jsem se omezil na celé země a vypadá to, že drtivá většina zemí má mezi 1 a 100 miliony obyvatel.
+
 ## Vizualizace 8
 
-(Screenshoty/obrázky, popis jednotlivých vizualizací)
+Poslední vizualizací je metrika počtu sebevražd. Zobrazuje 20 zemí s největším počtem sebevražd za rok seřazených sestupně.
+
