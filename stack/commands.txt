@@ -1,0 +1,4 @@
+sudo docker build -t python . && \
+sudo docker run --name python-container python && \
+sudo docker cp python-container:data.csv logstash/datasets/ && \
+sudo docker compose up -d

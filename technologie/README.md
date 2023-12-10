@@ -18,7 +18,7 @@
 	Data načtená z disku jsou uložena v RAM a zapisovaná data jsou nejprve také uložena v RAM. To umožňuje Mnogu rychlý přístup k datům, která jsou využívána častěji. Při každém čtení se nejprve databáze podívá do primární paměti a do sekundární až pokud nenajde hledaou položku. Veškerá data jsou nakonec uložena do sekundární paměti (na disk) v intervalech nebo při přetečení cache. To zajišťuje perzistenci dat i přes restarty nebo selhání. Celkově takovýto přístup umožňuje rychlý přístup k datům a zároveň i jejich zabezpečení před ztrátou.  
 
 ### Zabezpečení
-	V MongoDB je možné zabezpečení dat pomocí šifrování. Na data putující mezi jednotlivými uzly je také možné aplikovat přenosovou šifru, díky čemuž nelze data zachycená např. pomocí WireShark přečíst. Pro provozování takového zabezpečení je však ve všech uzlech databázové sítě vytvořit certifikát podepsaný certifikační autoritou. Ve svém řešení nevyuživám žádný typ zabezpečení proti odposlechu, jelikož se jedná pouze o ukázková vygenerovaná data a není důvod je nějak zabezpečovat.
+	V MongoDB je možné zabezpečení dat pomocí šifrování. Na data putující mezi jednotlivými uzly je také možné aplikovat přenosovou šifru, díky čemuž nelze data zachycená např. pomocí WireShark přečíst. Pro provozování takového zabezpečení je však ve všech uzlech databázové sítě vytvořit certifikát podepsaný certifikační autoritou. Další možností je využití přihlášení pomocí uživatelského jména a hesla. Ve svém řešení jsem se pokusil použít autentizaci pomocí přihlašovacího jména a hesla, ale nepodařilo se mi bohužel zprovoznit, tak jsem se vrátil k původnímu setupu.
 
 ### Výhody a nevýhody
 	Velká výhoda MongoDB a dokumentových databází obecně je jejich rychlost. Další výhodou je práce s daty ve formátu JSON, díky čemuž není potřeba data upravovat na straně aplikace. Další výhodou je velká flexibilita dat, což znamená, že v dokumentech může být prakticky cokoliv. Asi největší nevýhodou dokumentově orientovaných databází je nezaručená integrita dat. Ve větším měřítku může docházet k velkému nadbytku a duplicitě dat.
@@ -35,4 +35,5 @@
 https://chat.openai.com/
 https://courses.fit.cvut.cz/BI-BIG/
 https://en.wikipedia.org/wiki/MongoDB
+https://www.giorgosdimtsas.net/blog/docker-compose-for-a-local-mongodb-cluster/
 https://www.mongodb.com/

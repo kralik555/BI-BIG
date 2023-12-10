@@ -1,0 +1,3 @@
+sudo docker rm python-container
+sudo docker compose down
+sudo rm logstash/datasets/data.csv
